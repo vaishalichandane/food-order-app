@@ -26,7 +26,7 @@ function Checkout() {
 
     try {
       const res = await axios.post(
-       "https://food-order-backend-e4yh.onrender.com",
+        "https://food-order-backend-e4yh.onrender.com/orders",
         {
           customer: form,
           items: cart
@@ -37,6 +37,7 @@ function Checkout() {
 
       navigate(`/order/${res.data.id}`);
     } catch (error) {
+      console.log(error);
       alert("Order Failed");
     }
   };

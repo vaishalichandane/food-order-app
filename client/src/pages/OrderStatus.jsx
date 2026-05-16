@@ -10,11 +10,14 @@ function OrderStatus() {
   useEffect(() => {
     const fetchOrder = () => {
       axios
-       .get(
-  `https://food-order-backend-e4yh.onrender.com/orders/${id}`
-)
+        .get(
+          `https://food-order-backend-e4yh.onrender.com/orders/${id}`
+        )
         .then((res) => {
           setOrder(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
         });
     };
 
@@ -34,8 +37,7 @@ function OrderStatus() {
 
         {order ? (
           <>
-            <h2>Status</h2>
-
+            <h2>Status:</h2>
             <h1>{order.status}</h1>
           </>
         ) : (
