@@ -26,7 +26,7 @@ function Checkout() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/orders",
+       "https://food-order-backend-e4yh.onrender.com",
         {
           customer: form,
           items: cart

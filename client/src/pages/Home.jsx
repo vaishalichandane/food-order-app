@@ -6,8 +6,9 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/menu")
-      .then((res) => {
+      .get 
+      ("https://food-order-backend-e4yh.onrender.com")
+              .then((res) => {
         setMenu(res.data);
       });
   }, []);

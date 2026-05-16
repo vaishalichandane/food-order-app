@@ -10,9 +10,9 @@ function OrderStatus() {
   useEffect(() => {
     const fetchOrder = () => {
       axios
-        .get(
-          `http://localhost:5000/orders/${id}`
-        )
+       .get(
+  `https://food-order-backend-e4yh.onrender.com/orders/${id}`
+)
         .then((res) => {
           setOrder(res.data);
         });
