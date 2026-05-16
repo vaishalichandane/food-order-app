@@ -4,16 +4,16 @@ import axios from "axios";
 function Home() {
   const [menu, setMenu] = useState([]);
 
- useEffect(() => {
-  axios
-    .get("https://food-order-backend-e4yh.onrender.com/menu")
-    .then((res) => {
-      setMenu(res.data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-}, []);
+  useEffect(() => {
+    axios
+      .get("https://food-order-backend-e4yh.onrender.com/menu")
+      .then((res) => {
+        setMenu(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   const addToCart = (item) => {
     let cart =
@@ -21,7 +21,7 @@ function Home() {
 
     cart.push({
       ...item,
-      quantity: 1
+      quantity: 1,
     });
 
     localStorage.setItem(
